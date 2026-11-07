@@ -21,4 +21,4 @@ Follow along on [Instagram](https://www.instagram.com/dexitheus.ai/) and [CodePe
 
 ## License
 
-MIT
+MIT No Attribution (MIT-0): copy, change and use it however you like, no credit needed.
