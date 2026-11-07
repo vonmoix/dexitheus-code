@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="dx-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 009 · The Glitch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 009 · The Glitch</span>
+
+  <!-- Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Aurora BG -->
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="page">
+
+    <!-- ── HERO: Glitch + Split Reveal ── -->
+    <section class="hero">
+      <div class="reveal">
+        <span class="tag">do it complex. no mercy.</span>
+      </div>
+      <div class="glitch-wrap reveal">
+        <h1 class="glitch" data-text="The Glitch">The Glitch</h1>
+      </div>
+      <p class="hero-sub">
+        <span>no&nbsp;react.</span>&nbsp;
+        <span>no&nbsp;gsap.</span>&nbsp;
+        <span>no&nbsp;tailwind.</span>&nbsp;
+        <span>just&nbsp;craft.</span>
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── MARQUEE ── -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track" id="marquee">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <!-- ── SCRAMBLE TEXT ── -->
+    <section>
+      <span class="tag reveal">01 — Text Scramble</span>
+      <div id="scramble-text" class="reveal">Hover me</div>
+      <p class="scramble-hint reveal">hover or tap to scramble</p>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── SPOTLIGHT ── -->
+    <section class="spotlight-section">
+      <canvas id="spotlight-canvas"></canvas>
+      <div class="spotlight-content">
+        <span class="tag reveal">02 — Spotlight Cursor</span>
+        <br><br>
+        <p class="big-label reveal">move your cursor here</p>
+        <p class="scramble-hint reveal">no canvas library. just canvas api.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+  </div>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>

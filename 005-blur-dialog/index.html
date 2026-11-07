@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 005 · Blur dialog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 005 · Blur dialog</span>
+
+  <div class="scene" aria-hidden="true"></div>
+
+  <main class="dx-stage">
+    <div class="stack">
+      <button class="dx-btn dx-btn--primary" type="button" data-open>Open the dialog</button>
+      <p class="dx-meta">or press <kbd>X</kbd></p>
+    </div>
+  </main>
+
+  <dialog class="dlg" aria-labelledby="dlg-title" aria-describedby="dlg-text">
+    <form method="dialog" class="dlg__body">
+      <p class="dx-meta">Confirm</p>
+      <h2 class="dx-h2" id="dlg-title">Are you sure?</h2>
+      <p id="dlg-text">You are about to offend somebody, that's some serious shit. Have you really thought this through?</p>
+      <div class="dlg__actions">
+        <button class="dx-btn dx-btn--primary" value="yes">Yes, let's do it!</button>
+        <button class="dx-btn" value="no">No, I'll reconsider</button>
+      </div>
+      <button class="dlg__close" value="close" aria-label="Close">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" /></svg>
+      </button>
+    </form>
+  </dialog>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>
