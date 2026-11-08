@@ -1,5 +1,7 @@
 # Exp. 010 · Dial buttons
 
+![Poster](./poster.jpg)
+
 Circular dial buttons that fan out their options, driven by CSS cos() and sin().
 
 - Live demo and notes: https://dexitheus.ai/experimentos/010-dial-buttons/
