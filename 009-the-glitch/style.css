@@ -3,7 +3,7 @@
 /* ── Tokens ── */
 :root {
   /* Primitives */
-  --mostaza-500: #f3ca20;
+  --mostaza-500: #ecb617;
   --negro: #000000;
   --carbon: #2c2c2c;
   --blanco: #ffffff;
@@ -242,7 +242,7 @@ a {
 }
 
 :root {
-  --mostaza-700: #c9a40f;
+  --mostaza-700: #b88e13;
   --c-bg: var(--negro);
   --c-surface: color-mix(in srgb, var(--mostaza-500) 5%, transparent);
   --c-border: color-mix(in srgb, var(--mostaza-500) 20%, transparent);
@@ -328,7 +328,7 @@ body:has(a:hover) #cursor-ring {
 .aurora-blob:nth-child(1) {
   width: 70vw;
   height: 60vh;
-  background: radial-gradient(circle, #f3ca20 0%, transparent 70%);
+  background: radial-gradient(circle, #ecb617 0%, transparent 70%);
   top: -20%;
   left: -10%;
   animation-duration: 14s;
@@ -336,7 +336,7 @@ body:has(a:hover) #cursor-ring {
 .aurora-blob:nth-child(2) {
   width: 50vw;
   height: 70vh;
-  background: radial-gradient(circle, #c9a40f 0%, transparent 70%);
+  background: radial-gradient(circle, #b88e13 0%, transparent 70%);
   top: 20%;
   right: -15%;
   animation-duration: 18s;
@@ -345,7 +345,7 @@ body:has(a:hover) #cursor-ring {
 .aurora-blob:nth-child(3) {
   width: 55vw;
   height: 55vh;
-  background: radial-gradient(circle, #f3ca20 0%, transparent 70%);
+  background: radial-gradient(circle, #ecb617 0%, transparent 70%);
   bottom: -10%;
   left: 30%;
   animation-duration: 20s;

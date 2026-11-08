@@ -73,8 +73,8 @@ scramble(scrambleEl, PHRASES[0]); // init
 /* ── SPOTLIGHT CANVAS ────────────────────────────────── */
 // Spotlight colours are read from the CSS tokens
 const rootCss = getComputedStyle(document.documentElement);
-const spotA = rootCss.getPropertyValue("--mostaza-500").trim() || "#F3CA20";
-const spotB = rootCss.getPropertyValue("--mostaza-700").trim() || "#C9A40F";
+const spotA = rootCss.getPropertyValue("--mostaza-500").trim() || "#ECB617";
+const spotB = rootCss.getPropertyValue("--mostaza-700").trim() || "#B88E13";
 const rgba = (hex, a) => {
   const n = parseInt(hex.replace("#", ""), 16);
   return `rgba(${n >> 16}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
