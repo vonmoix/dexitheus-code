@@ -1,5 +1,7 @@
 # Exp. 015 · Motion blur
 
+![Poster](./poster.jpg)
+
 A counter that eases toward the slider's value and blurs horizontally as it speeds up: an SVG `feGaussianBlur` driven by the number's velocity. Vanilla JS, no libraries.
 
 - Live demo and notes: https://dexitheus.ai/experimentos/015-motion-blur/

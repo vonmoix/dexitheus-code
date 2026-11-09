@@ -1,5 +1,7 @@
 # Exp. 019 · Subscribe form
 
+![Poster](./poster.jpg)
+
 A subscribe form that sweeps shut and slides in a thank-you. A real form underneath: native email validation, a live status for screen readers and a fade-only version for reduced motion.
 
 Inspired by Niklaus Gerber's Daily UI 026.

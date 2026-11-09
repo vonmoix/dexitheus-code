@@ -1,5 +1,7 @@
 # Exp. 014 · Inner shadow
 
+![Poster](./poster.jpg)
+
 Pressed-in text made with a Sass mixin: one colour in, a carved letterpress effect out, built from layered text-shadows.
 
 Inspired by [webbaron's pen](https://codepen.io/webbaron/pen/ifzjl).

@@ -1,5 +1,7 @@
 # Exp. 011 · Badges
 
+![Poster](./poster.jpg)
+
 Icon buttons with red notification badges. Counts above 99 show as 99+; click a button to clear its badge. Icons from Material Symbols Sharp.
 
 Based on [this shot](http://drbl.in/koLf) by Ced Funches.

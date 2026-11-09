@@ -1,5 +1,7 @@
 # Exp. 012 · Tooltip & popover
 
+![Poster](./poster.jpg)
+
 Tooltips in pure CSS and popovers with the native popover API, no libraries. A few lines of JS place them next to their trigger and flip them when they don't fit.
 
 - Live demo and notes: https://dexitheus.ai/experimentos/012-tooltip-popover/
