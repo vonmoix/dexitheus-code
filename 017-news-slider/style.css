@@ -1,0 +1,162 @@
+/* ── Pen ── */
+.news {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  gap: var(--space-6);
+}
+
+/* ── Viewport + track: native scroll-snap, cards centred ── */
+.news__viewport {
+  --card: min(320px, 78cqi);
+  --gap: var(--space-5);
+
+  position: relative;
+  container-type: inline-size;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.news__viewport::-webkit-scrollbar { display: none; }
+
+.news__track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: var(--gap);
+  width: max-content;
+  margin: 0;
+  padding: var(--space-3) calc((100cqi - var(--card)) / 2);
+  list-style: none;
+}
+.news__slide {
+  flex: none;
+  width: var(--card);
+  scroll-snap-align: center;
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: var(--dx-rule);
+  color: var(--dx-fg);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+.card:focus-visible { outline-offset: 4px; }
+
+/* Swiss-style posters generated with Magnific, embedded as WebP */
+.card__poster {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #000;
+  border-bottom: var(--dx-rule);
+}
+
+.card__body {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+.card__title {
+  margin-top: var(--space-1);
+  font-weight: 800;
+  font-size: var(--text-h3);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.card__text { font-size: var(--text-body-s); }
+.card__more {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: end;
+  padding-top: var(--space-4);
+}
+.card__more .icon { font-size: 16px; }
+
+/* Card on top of the black panel */
+.card.is-lit { color: var(--dx-bg); }
+
+/* ── Gliding highlight ── */
+.news__highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: var(--dx-fg);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    translate 420ms var(--ease-out),
+    width 420ms var(--ease-out),
+    height 420ms var(--ease-out),
+    opacity var(--duration-fast);
+}
+.news__highlight.is-on { opacity: 1; }
+
+/* ── Icons: Material Symbols Sharp, loaded as an external stylesheet ── */
+.icon {
+  font-family: "Material Symbols Sharp";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  font-feature-settings: "liga";
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  width: 1em;          /* no text overflow while the font loads */
+  overflow: hidden;
+}
+
+/* ── Controls ── */
+.news__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-5);
+}
+.news__arrow {
+  justify-content: center;
+  width: 56px;
+  padding: 0;
+  font-size: var(--text-h3);
+}
+.news__arrow .icon { font-size: 24px; }
+.news__arrow:disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+.news__dots { display: flex; gap: var(--space-2); }
+.news__dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.news__dot::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border: var(--dx-rule);
+  transition: background var(--duration-fast), width var(--duration-fast);
+}
+.news__dot[aria-current="true"]::before { width: 22px; background: var(--dx-fg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .news__viewport { scroll-behavior: auto; }
+  .news__highlight { transition: opacity var(--duration-fast); }
+}

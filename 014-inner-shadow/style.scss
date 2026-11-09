@@ -1,0 +1,30 @@
+/* ── Pen ── */
+// Same value as --mostaza-500: Sass needs a real colour to darken/lighten
+$bg: #ECB617;
+
+// Pressed-in text. The text itself is almost transparent; a sharp dark copy
+// sits underneath and two blurred copies in the background colour eat into its
+// edges from above, so it reads as carved. A light offset adds the lit lip.
+@mixin inner-shadow($bg, $depth: 0.3, $highlight: lighten($bg, 15%)) {
+  color: rgba(darken($bg, 25%), 0.15);
+  text-shadow:
+    1px 2px 8px $bg,
+    0 0 0 rgba(darken($bg, 80%), $depth),
+    1px 2px 8px $bg,
+    2px 2px 0 $highlight;
+}
+
+.press {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  margin: 0;
+}
+
+.press__word {
+  font-weight: 900;
+  font-size: clamp(88px, 22vw, 300px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  @include inner-shadow($bg);
+}

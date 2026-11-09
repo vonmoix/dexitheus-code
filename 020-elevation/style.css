@@ -1,0 +1,72 @@
+/* ── Pen ── */
+.demo {
+  /* Shadows are tinted from the page, not grey, so they read as depth on mustard */
+  --shade: color-mix(in oklab, var(--dx-bg), var(--negro) 55%);
+  --a: color-mix(in srgb, var(--shade) 55%, transparent); /* wide, soft */
+  --b: color-mix(in srgb, var(--shade) 40%, transparent); /* tight contact */
+
+  /* Two layers per level, adapted from Material Design */
+  --elevation-1: 0 1px 3px var(--a), 0 1px 1px var(--b);
+  --elevation-2: 0 5px 10px var(--a), 0 4px 5px var(--b);
+  --elevation-3: 0 11px 23px var(--a), 0 6px 11px var(--b);
+  --elevation-4: 0 15px 33px var(--a), 0 12px 14px var(--b);
+  --elevation-5: 0 18px 45px var(--a), 0 15px 15px var(--b);
+
+  width: 100%;
+  max-width: 880px;
+  display: grid;
+  gap: var(--space-8);
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(104px, 1fr));
+  gap: var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Same colour as the page: only the shadow separates the card */
+.level {
+  aspect-ratio: 1;
+  display: grid;
+  align-content: end;
+  padding: var(--space-3);
+  background: var(--dx-bg);
+}
+.level--1 { box-shadow: var(--elevation-1); }
+.level--2 { box-shadow: var(--elevation-2); }
+.level--3 { box-shadow: var(--elevation-3); }
+.level--4 { box-shadow: var(--elevation-4); }
+.level--5 { box-shadow: var(--elevation-5); }
+
+/* Interactive card: rests at 1, lifts to 5, settles back when pressed */
+.lift {
+  aspect-ratio: auto;
+  min-height: 160px;
+  gap: var(--space-2);
+  justify-items: start;
+  border: 0;
+  border-radius: 0;
+  color: var(--dx-fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--elevation-1);
+  transition:
+    box-shadow 300ms var(--ease-out),
+    translate 300ms var(--ease-out);
+}
+.lift:focus-visible { box-shadow: var(--elevation-5); translate: 0 -4px; }
+@media (hover: hover) and (pointer: fine) {
+  .lift:hover { box-shadow: var(--elevation-5); translate: 0 -4px; }
+}
+.lift:active { box-shadow: var(--elevation-1); translate: 0 0; transition-duration: 80ms; }
+
+/* Reduced motion: the shadow changes, the card stays put */
+@media (prefers-reduced-motion: reduce) {
+  .lift,
+  .lift:hover,
+  .lift:focus-visible { translate: none; }
+}

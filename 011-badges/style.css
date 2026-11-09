@@ -1,0 +1,92 @@
+/* ── Pen ── */
+.demo {
+  --badge-bg: #D62828;   /* red lives only inside the experiment */
+  --badge-fg: #FFFFFF;
+
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  gap: var(--space-8);
+}
+.demo__group {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: var(--dx-rule);
+}
+.demo__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  padding-top: var(--space-3); /* room for the badges */
+}
+
+/* ── Icon button ── */
+.icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: var(--dx-rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--dx-fg);
+  cursor: pointer;
+  transition: background var(--duration-fast), color var(--duration-fast);
+}
+.icon-btn:focus-visible { background: var(--dx-fg); color: var(--dx-bg); }
+@media (hover: hover) and (pointer: fine) {
+  .icon-btn:hover { background: var(--dx-fg); color: var(--dx-bg); }
+}
+.icon-btn:active { translate: 0 1px; }
+
+/* Material Symbols Sharp, loaded as an external stylesheet */
+.icon {
+  font-family: "Material Symbols Sharp";
+  font-size: 28px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  font-feature-settings: "liga";
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 48;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  width: 1em;          /* no text overflow while the font loads */
+  overflow: hidden;
+}
+
+/* ── Badge ── */
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  translate: 50% -50%;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  border-radius: 12px;
+  background: var(--badge-bg);
+  color: var(--badge-fg);
+  box-shadow: 0 0 0 2px var(--dx-bg); /* cut-out ring, not a shadow */
+  font: 700 var(--text-meta) / 24px var(--font-mono);
+  text-align: center;
+  pointer-events: none;
+  transition:
+    scale var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out);
+}
+.icon-btn.is-cleared .badge { scale: 0; opacity: 0; }
+
+.reset { min-height: 40px; font-size: var(--text-body-s); }
+
+@media (prefers-reduced-motion: reduce) {
+  .badge { transition: opacity var(--duration-fast) linear; }
+  .icon-btn.is-cleared .badge { scale: 1; }
+  .icon-btn:active { translate: none; }
+}

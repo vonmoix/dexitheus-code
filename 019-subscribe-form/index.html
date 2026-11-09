@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 019 · Subscribe form</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 019 · Subscribe form</span>
+
+  <main class="dx-stage">
+    <form class="subscribe" data-state="idle">
+      <label class="dx-meta" for="email">Newsletter</label>
+      <div class="subscribe__bar">
+        <input class="subscribe__input" id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="dx-btn dx-btn--primary subscribe__btn" type="submit">Send</button>
+        <span class="subscribe__fill" aria-hidden="true"></span>
+        <p class="subscribe__thanks" role="status"></p>
+      </div>
+    </form>
+  </main>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>

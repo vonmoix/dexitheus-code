@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 015 · Motion blur</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 015 · Motion blur</span>
+
+  <main class="dx-stage">
+    <div class="counter">
+      <p class="counter__value" id="value" aria-hidden="true">0</p>
+
+      <div class="counter__control">
+        <label class="dx-meta" for="slider">Target</label>
+        <input id="slider" class="slider" type="range" min="0" max="20000" step="5000" value="20000">
+        <div class="ticks dx-mono" aria-hidden="true">
+          <span style="--i: 0">0</span>
+          <span style="--i: 1">5k</span>
+          <span style="--i: 2">10k</span>
+          <span style="--i: 3">15k</span>
+          <span style="--i: 4">20k</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Horizontal-only blur for the digits still moving; JS sets its strength from the speed -->
+  <svg class="filters" width="0" height="0" aria-hidden="true">
+    <filter id="motion-blur" x="-100%" width="300%">
+      <feGaussianBlur id="blur" in="SourceGraphic" stdDeviation="0,0" />
+    </filter>
+  </svg>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>

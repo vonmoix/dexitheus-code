@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 017 · News slider</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,600,1,0&amp;icon_names=arrow_back,arrow_forward&amp;display=block">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 017 · News slider</span>
+
+  <main class="dx-stage">
+    <section class="news" aria-label="Latest experiments">
+      <div class="news__viewport">
+        <!-- Black panel that glides behind the hovered or focused card -->
+        <div class="news__highlight" aria-hidden="true"></div>
+        <ul class="news__track">
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-1.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 001 · WebGL</span>
+                <span class="card__title">Event Horizon</span>
+                <span class="card__text">A black hole bending light around its event horizon, drawn in a single shader.</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-2.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 002 · CSS</span>
+                <span class="card__title">Flip cards</span>
+                <span class="card__text">Cards that turn over on hover to reveal their hidden side.</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-3.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 003 · Canvas</span>
+                <span class="card__title">Swarm</span>
+                <span class="card__text">Particles that drift, link up when close and scatter from the pointer.</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-4.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 013 · CSS</span>
+                <span class="card__title">Toggle switch</span>
+                <span class="card__text">A square switch that flips the whole page to dark mode with :has().</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-5.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 015 · SVG filter</span>
+                <span class="card__title">Motion blur</span>
+                <span class="card__text">A counter that blurs as it races and sharpens digit by digit.</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+          <li class="news__slide">
+            <a class="card" href="https://dexitheus.ai" target="_blank" rel="noopener">
+              <img class="card__poster" src="img/poster-6.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+              <span class="card__body">
+                <span class="card__kicker dx-meta">Exp. 016 · Component</span>
+                <span class="card__title">Pulse button</span>
+                <span class="card__text">A circular button that sends out a wave on every click.</span>
+                <span class="card__more dx-meta">Read more <span class="icon" aria-hidden="true">arrow_forward</span></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="news__controls">
+        <button type="button" class="dx-btn news__arrow" data-dir="-1" aria-label="Previous"><span class="icon" aria-hidden="true">arrow_back</span></button>
+        <div class="news__dots"></div>
+        <button type="button" class="dx-btn news__arrow" data-dir="1" aria-label="Next"><span class="icon" aria-hidden="true">arrow_forward</span></button>
+      </div>
+    </section>
+  </main>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>

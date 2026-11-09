@@ -1,0 +1,91 @@
+/* ── Pen ── */
+/* The switch flips the whole page theme with :has() — no JS */
+:root:has(#switch:checked) {
+  --dx-bg: var(--negro);
+  --dx-fg: var(--mostaza-500);
+  --dx-accent: var(--mostaza-500);
+}
+body {
+  transition:
+    background-color 240ms var(--ease-out),
+    color 240ms var(--ease-out);
+}
+
+.switch {
+  --w: 112px;
+  --h: 56px;
+  --pad: 6px;
+  --thumb: calc(var(--h) - var(--border-rule) * 2 - var(--pad) * 2);
+  --travel: calc(var(--w) - var(--border-rule) * 2 - var(--pad) * 2 - var(--thumb));
+  --stretch: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hidden visually, still focusable and announced as a switch */
+.switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+}
+
+.switch__track {
+  position: relative;
+  flex: none;
+  width: var(--w);
+  height: var(--h);
+  border: var(--dx-rule);
+  transition: background-color var(--duration-fast);
+}
+.switch__thumb {
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+  width: var(--thumb);
+  height: var(--thumb);
+  background: var(--dx-fg);
+  transition:
+    translate 240ms var(--ease-out),
+    width var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast);
+}
+
+.switch input:checked + .switch__track { background: var(--dx-fg); }
+.switch input:checked + .switch__track .switch__thumb {
+  background: var(--dx-bg);
+  translate: var(--travel) 0;
+}
+
+/* Press: the thumb stretches toward where it's going */
+.switch:active .switch__thumb { width: calc(var(--thumb) + var(--stretch)); }
+.switch:active input:checked + .switch__track .switch__thumb {
+  translate: calc(var(--travel) - var(--stretch)) 0;
+}
+
+.switch input:focus-visible + .switch__track {
+  outline: var(--dx-rule);
+  outline-offset: 4px;
+}
+
+.switch__text { display: grid; gap: var(--space-1); }
+.switch__name {
+  font-weight: 800;
+  font-size: var(--text-h2);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.switch__state::before { content: "Off"; }
+.switch input:checked ~ .switch__text .switch__state::before { content: "On"; }
+
+@media (prefers-reduced-motion: reduce) {
+  .switch__thumb { transition: background-color var(--duration-fast); }
+  .switch:active .switch__thumb { width: var(--thumb); }
+  .switch:active input:checked + .switch__track .switch__thumb { translate: var(--travel) 0; }
+}

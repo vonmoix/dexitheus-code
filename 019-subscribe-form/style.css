@@ -1,0 +1,85 @@
+/* ── Pen ── */
+.subscribe {
+  --sweep: 700ms;
+  width: min(100%, 420px);
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* One bar holds every layer: input and button, the black sweep, the thank-you */
+.subscribe__bar {
+  position: relative;
+  display: flex;
+  height: 56px;
+  border: var(--dx-rule);
+  overflow: hidden;
+}
+.subscribe__bar:focus-within { outline: var(--dx-rule); outline-offset: 3px; }
+
+.subscribe__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--dx-fg);
+  font: 500 var(--text-body-s) / 1.2 var(--font-mono);
+}
+.subscribe__input::placeholder { color: color-mix(in srgb, var(--dx-fg) 60%, transparent); }
+.subscribe__input:focus-visible { outline: none; } /* the bar shows focus instead */
+
+.subscribe__btn {
+  position: relative;
+  z-index: 3;
+  min-height: 0;
+  border: 0;
+  border-left: var(--dx-rule);
+  transition:
+    background var(--duration-fast),
+    color var(--duration-fast),
+    translate 300ms var(--ease-out);
+}
+.subscribe__btn:focus-visible { outline: none; }
+
+/* Black sweep from the left */
+.subscribe__fill {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: var(--dx-fg);
+  translate: -101% 0;
+  transition: translate var(--sweep) var(--ease-out);
+}
+
+/* Thank-you rises from below once the sweep has closed the bar */
+.subscribe__thanks {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  color: var(--dx-bg);
+  font: 500 var(--text-meta) / 1.2 var(--font-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  translate: 0 100%;
+  transition: translate 400ms var(--ease-out);
+  pointer-events: none;
+}
+
+/* States, set by JS on the form: idle → sending → done → idle */
+.subscribe:not([data-state="idle"]) .subscribe__btn { translate: 0 100%; }
+.subscribe:not([data-state="idle"]) .subscribe__fill { translate: 0 0; }
+.subscribe[data-state="done"] .subscribe__thanks { translate: 0 0; }
+
+/* Reduced motion: layers fade in place */
+@media (prefers-reduced-motion: reduce) {
+  .subscribe[data-state] :is(.subscribe__btn, .subscribe__fill, .subscribe__thanks) {
+    translate: none;
+    transition: opacity var(--duration-fast) linear;
+  }
+  .subscribe[data-state="idle"] .subscribe__fill,
+  .subscribe:not([data-state="done"]) .subscribe__thanks,
+  .subscribe:not([data-state="idle"]) .subscribe__btn { opacity: 0; }
+}

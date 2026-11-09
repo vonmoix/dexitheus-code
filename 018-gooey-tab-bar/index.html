@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 018 · Gooey tab bar</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,600,1,0&amp;icon_names=favorite,home,person&amp;display=block">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 018 · Gooey tab bar</span>
+
+  <main class="dx-stage">
+    <div class="demo">
+      <figure class="demo__item">
+        <nav class="phone" aria-label="Demo navigation, floating">
+          <input type="radio" name="tab-a" id="a1" aria-label="Home">
+          <input type="radio" name="tab-a" id="a2" aria-label="Favourites" checked>
+          <input type="radio" name="tab-a" id="a3" aria-label="Profile">
+          <label for="a1"><span class="icon" aria-hidden="true">home</span></label>
+          <label for="a2"><span class="icon" aria-hidden="true">favorite</span></label>
+          <label for="a3"><span class="icon" aria-hidden="true">person</span></label>
+          <div class="circle"></div>
+          <!-- Blur + contrast melt the bar and the blob into one liquid shape -->
+          <div class="phone__content">
+            <div class="phone__bottom">
+              <span class="indicator"></span>
+            </div>
+          </div>
+        </nav>
+        <figcaption class="dx-meta">01 · Floating button</figcaption>
+      </figure>
+
+      <figure class="demo__item">
+        <nav class="phone phone--rim" aria-label="Demo navigation, red rim">
+          <input type="radio" name="tab-b" id="b1" aria-label="Home">
+          <input type="radio" name="tab-b" id="b2" aria-label="Favourites" checked>
+          <input type="radio" name="tab-b" id="b3" aria-label="Profile">
+          <label for="b1"><span class="icon" aria-hidden="true">home</span></label>
+          <label for="b2"><span class="icon" aria-hidden="true">favorite</span></label>
+          <label for="b3"><span class="icon" aria-hidden="true">person</span></label>
+          <div class="circle"></div>
+          <!-- Blur + contrast melt the bar and the blob into one liquid shape -->
+          <div class="phone__content">
+            <div class="phone__bottom">
+              <span class="indicator"></span>
+            </div>
+          </div>
+        </nav>
+        <figcaption class="dx-meta">02 · Red rim</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+</body>
+</html>

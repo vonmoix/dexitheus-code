@@ -1,0 +1,18 @@
+/* Compiled from style.scss — edit that file, this one is generated. */
+
+/* ── Pen ── */
+.press {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  margin: 0;
+}
+
+.press__word {
+  font-weight: 900;
+  font-size: clamp(88px, 22vw, 300px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: rgba(122, 93, 10, 0.15);
+  text-shadow: 1px 2px 8px #ECB617, 0 0 0 rgba(0, 0, 0, 0.3), 1px 2px 8px #ECB617, 2px 2px 0 rgb(242, 204, 94);
+}

@@ -1,181 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap");
-
-/* ── Tokens ── */
-:root {
-  /* Primitives */
-  --mostaza-500: #ECB617;
-  --negro: #000000;
-  --carbon: #2C2C2C;
-  --blanco: #FFFFFF;
-
-  /* Color (semantic) */
-  --color-bg: var(--mostaza-500);
-  --color-bg-inverse: var(--negro);
-  --color-bg-code: var(--carbon);
-  --color-bg-preview: var(--negro);
-  --color-text: var(--negro);
-  --color-text-inverse: var(--mostaza-500);
-  --color-text-code: var(--blanco);
-  --color-border: var(--negro);
-  --color-icon: var(--negro);
-
-  /* Spacing */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 96px;
-  --space-10: 128px;
-  --border-rule: 2px;
-  --border-hairline: 1px;
-  --radius-none: 0;
-
-  /* Grid (desktop) */
-  --grid-columns: 12;
-  --grid-margin: 48px;
-  --grid-gutter: 24px;
-  --grid-max: 1440px;
-
-  /* Typography */
-  --font-display: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --text-display: clamp(44px, 12.6vw, 160px);
-  --text-h1: clamp(44px, 5vw, 72px);
-  --text-h2: clamp(30px, 2.8vw, 40px);
-  --text-h3: 24px;
-  --text-body-l: 20px;
-  --text-body: 16px;
-  --text-body-s: 14px;
-  --text-meta: 12px;
-  --text-code: 13px;
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 160ms;
-}
-
-/* Grid (tablet) */
-@media (max-width: 1199px) {
-  :root {
-    --grid-columns: 8;
-    --grid-margin: 32px;
-    --grid-gutter: 20px;
-  }
-}
-
-/* Grid (mobile) */
-@media (max-width: 767px) {
-  :root {
-    --grid-columns: 4;
-    --grid-margin: 16px;
-    --grid-gutter: 16px;
-  }
-}
-
-/* ── Themes ── */
-:root {
-  --dx-bg: var(--color-bg);
-  --dx-fg: var(--color-text);
-  --dx-accent: var(--negro);
-  --dx-rule: var(--border-rule) solid var(--dx-fg);
-}
-.dx-dark {
-  --dx-bg: var(--negro);
-  --dx-fg: var(--mostaza-500);
-  --dx-accent: var(--mostaza-500);
-}
-
-/* ── Minimal reset ── */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
-  background: var(--dx-bg);
-  color: var(--dx-fg);
-  font-family: var(--font-display);
-  font-size: var(--text-body);
-  font-weight: 500;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-h1, h2, h3, p { margin: 0; }
-img, canvas, svg, video { display: block; max-width: 100%; }
-a { color: inherit; }
-::selection { background: var(--dx-fg); color: var(--dx-bg); }
-:focus-visible { outline: var(--dx-rule); outline-offset: 3px; }
-
-/* ── Stage ── */
-.dx-stage {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: grid;
-  place-items: center;
-  padding: calc(var(--space-7) + var(--space-4)) var(--grid-margin);
-}
-.dx-stage--full { padding: 0; }
-.dx-stage--full > canvas { position: fixed; inset: 0; width: 100%; height: 100%; }
-
-/* ── Label and credit ── */
-.dx-label,
-.dx-credit {
-  position: fixed;
-  z-index: 10;
-  font: 500 var(--text-meta) / 1.2 var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--dx-fg);
-  text-decoration: none;
-}
-.dx-label { top: var(--space-4); left: var(--space-4); }
-.dx-credit { bottom: var(--space-4); right: var(--space-4); }
-.dx-credit:hover { text-decoration: underline; text-decoration-thickness: 2px; }
-
-/* ── Typography ── */
-.dx-display {
-  font-weight: 900;
-  font-size: var(--text-display);
-  line-height: 0.88;
-  letter-spacing: -0.055em;
-}
-.dx-h1 { font-weight: 900; font-size: var(--text-h1); line-height: 0.95; letter-spacing: -0.045em; }
-.dx-h2 { font-weight: 800; font-size: var(--text-h2); line-height: 1; letter-spacing: -0.03em; }
-.dx-meta,
-.dx-mono { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: 0.04em; }
-.dx-meta { text-transform: uppercase; }
-
-/* ── Button ── */
-.dx-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-4);
-  min-height: 56px;
-  padding: 0 20px;
-  border: var(--dx-rule);
-  border-radius: 0;
-  background: transparent;
-  color: var(--dx-fg);
-  font: 700 var(--text-body) / 1.2 var(--font-display);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background var(--duration-fast), color var(--duration-fast);
-}
-.dx-btn:hover,
-.dx-btn--primary { background: var(--dx-fg); color: var(--dx-bg); }
-.dx-btn--primary:hover { background: transparent; color: var(--dx-fg); }
-
 /* ── Gradient menu ── */
 .menu {
-  /* Gradient pairs, one per tab */
-  --c1: #FDA085; --c1g: #F6D365;
-  --c2: #BFF098; --c2g: #6FD6FF;
-  --c3: #EA8D8D; --c3g: #A890FE;
-  --c4: #D8B5FF; --c4g: #1EAE98;
-  --c5: #C6EA8D; --c5g: #FE90AF;
+  /* Bauhaus palette */
+  --crimson:   #F40220;
+  --tangerine: #FF7B30;
+  --blueprint: #4A78FF; /* lightened from #0019FF so black text reads on it */
+  --flamingo:  #FF5AA9;
+  --herbs:     #09A953;
+  --saffron:   #ECB617;
 
   --gap: var(--space-4);
   --strip: var(--space-1);
@@ -197,28 +28,31 @@ a { color: inherit; }
 }
 
 .menu > ol > li {
-  --accent: var(--dx-fg);
-  --gradient: var(--dx-fg);
+  --gradient: var(--dx-fg);  /* strip colour, also the panel's base */
+  --tone: var(--blanco);     /* the panel fades towards this */
+  --panel-dir: to right;     /* away from the strip */
+  --ink: var(--negro);       /* text on the open panel */
   position: relative;
   isolation: isolate;
   border-left: var(--strip) solid var(--gradient);
   border-bottom: var(--border-hairline) solid color-mix(in srgb, var(--dx-fg) 25%, transparent);
 }
 
-.menu > ol > li:nth-child(1) { --accent: var(--c1); --gradient: var(--c1g); }
-.menu > ol > li:nth-child(2) { --accent: var(--c2); --gradient: var(--c2g); }
-.menu > ol > li:nth-child(3) { --accent: var(--c3); --gradient: var(--c3g); }
-.menu > ol > li:nth-child(4) { --accent: var(--c4); --gradient: var(--c4g); }
-.menu > ol > li:nth-child(5) { --accent: var(--c5); --gradient: var(--c5g); }
+/* Saffron is left out: it is too close to the mustard page */
+.menu > ol > li:nth-child(1) { --gradient: var(--blueprint); }
+.menu > ol > li:nth-child(2) { --gradient: var(--tangerine); }
+.menu > ol > li:nth-child(3) { --gradient: var(--herbs); }
+.menu > ol > li:nth-child(4) { --gradient: var(--crimson); }
+.menu > ol > li:nth-child(5) { --gradient: var(--flamingo); }
 
-/* Gradient panel */
+/* Colour panel: starts in the strip colour and lightens towards --tone */
 .menu > ol > li::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   max-width: 0;
-  background: linear-gradient(to left, var(--accent), var(--gradient));
+  background: linear-gradient(var(--panel-dir), var(--gradient), color-mix(in oklab, var(--gradient), var(--tone) 30%));
   transition: max-width var(--duration) var(--ease-out), inset var(--duration) var(--ease-out);
 }
 
@@ -282,13 +116,13 @@ a { color: inherit; }
 }
 
 .sub-menu a::after { bottom: var(--space-1); height: var(--border-hairline); }
-.sub-menu a:focus-visible { background: color-mix(in srgb, var(--negro) 12%, transparent); }
+.sub-menu a:focus-visible { background: color-mix(in srgb, currentColor 15%, transparent); }
 .sub-menu a:focus-visible::after { width: var(--space-4); }
 
 /* Open state: keyboard and touch */
 .menu > ol > li:focus-within {
   z-index: 5;
-  color: var(--negro);
+  color: var(--ink);
 }
 .menu > ol > li:focus-within::after { max-width: 100%; }
 .menu > ol > li:focus-within .sub-menu { max-height: 500px; }
@@ -298,12 +132,12 @@ a { color: inherit; }
 @media (hover: hover) and (pointer: fine) {
   .menu > ol > li:hover {
     z-index: 5;
-    color: var(--negro);
+    color: var(--ink);
   }
   .menu > ol > li:hover::after { max-width: 100%; }
   .menu > ol > li:hover > a::before { transform: translateY(-25%) rotate(225deg); }
   .menu a:hover::after { width: var(--space-6); }
-  .sub-menu a:hover { background: color-mix(in srgb, var(--negro) 12%, transparent); }
+  .sub-menu a:hover { background: color-mix(in srgb, currentColor 15%, transparent); }
   .sub-menu a:hover::after { width: var(--space-4); }
 }
 
@@ -324,12 +158,12 @@ a { color: inherit; }
     width: 120px;
     border-left: 0;
     border-bottom: 0;
-    border-top: var(--strip) solid var(--accent);
+    border-top: var(--strip) solid var(--gradient);
     text-align: center;
   }
 
   .menu > ol > li::after {
-    background: linear-gradient(to bottom, var(--accent), var(--gradient));
+    --panel-dir: to bottom;
   }
 
   .menu > ol > li:focus-within::after {

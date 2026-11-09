@@ -1,0 +1,71 @@
+/* ── Pen ── */
+.filters { position: absolute; }
+
+.counter {
+  width: 100%;
+  max-width: 720px;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-7);
+}
+
+.counter__value {
+  font-weight: 900;
+  font-size: clamp(72px, 18vw, 220px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.counter__value span { display: inline-block; }
+/* Only digits that will still change get the blur; settled ones stay sharp */
+.counter__value .is-moving { filter: url(#motion-blur); }
+
+.counter__control {
+  width: min(100%, 480px);
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* ── Slider ── */
+.slider {
+  --thumb: 24px;
+  width: 100%;
+  height: var(--thumb);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.slider::-webkit-slider-runnable-track { height: var(--border-rule); background: var(--dx-fg); }
+.slider::-moz-range-track { height: var(--border-rule); background: var(--dx-fg); }
+.slider::-webkit-slider-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  margin-top: calc((var(--thumb) - var(--border-rule)) / -2);
+  border: 0;
+  border-radius: 0;
+  background: var(--dx-fg);
+  -webkit-appearance: none;
+  appearance: none;
+}
+.slider::-moz-range-thumb {
+  width: var(--thumb);
+  height: var(--thumb);
+  border: 0;
+  border-radius: 0;
+  background: var(--dx-fg);
+}
+.slider:focus-visible { outline: var(--dx-rule); outline-offset: 6px; }
+
+/* Tick labels line up with the thumb's centre at each step */
+.ticks {
+  position: relative;
+  height: 1.2em;
+  margin-inline: calc(var(--thumb, 24px) / 2);
+}
+.ticks span {
+  position: absolute;
+  left: calc(var(--i) * 25%);
+  translate: -50% 0;
+}

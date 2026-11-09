@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exp. 012 · Tooltip &amp; popover</title>
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <span class="dx-label">Exp. 012 · Tooltip &amp; popover</span>
+
+  <main class="dx-stage">
+    <div class="demo">
+      <section class="demo__group">
+        <h2 class="dx-meta">01 · Tooltip — hover or focus</h2>
+        <div class="demo__row">
+          <button type="button" class="dx-btn tip-trigger" data-placement="left" aria-describedby="tip-left">
+            Left<span class="tip" id="tip-left" role="tooltip" aria-hidden="true">Left tooltip</span>
+          </button>
+          <button type="button" class="dx-btn tip-trigger" data-placement="top" aria-describedby="tip-top">
+            Top<span class="tip" id="tip-top" role="tooltip" aria-hidden="true">Top tooltip</span>
+          </button>
+          <button type="button" class="dx-btn tip-trigger" data-placement="bottom" aria-describedby="tip-bottom">
+            Bottom<span class="tip" id="tip-bottom" role="tooltip" aria-hidden="true">Bottom tooltip</span>
+          </button>
+          <button type="button" class="dx-btn tip-trigger" data-placement="right" aria-describedby="tip-right">
+            Right<span class="tip" id="tip-right" role="tooltip" aria-hidden="true">Right tooltip</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="demo__group">
+        <h2 class="dx-meta">02 · Popover — click or tap</h2>
+        <div class="demo__row">
+          <button type="button" class="dx-btn dx-btn--primary" popovertarget="pop-left">Left</button>
+          <button type="button" class="dx-btn dx-btn--primary" popovertarget="pop-top">Top</button>
+          <button type="button" class="dx-btn dx-btn--primary" popovertarget="pop-bottom">Bottom</button>
+          <button type="button" class="dx-btn dx-btn--primary" popovertarget="pop-right">Right</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="pop" id="pop-left" popover data-placement="left">
+    <p class="pop__title">Left popover</p>
+    <p class="pop__body">Native <code>popover</code> attribute. Click outside or press Esc to close.</p>
+  </div>
+  <div class="pop" id="pop-top" popover data-placement="top">
+    <p class="pop__title">Top popover</p>
+    <p class="pop__body">Native <code>popover</code> attribute. Click outside or press Esc to close.</p>
+  </div>
+  <div class="pop" id="pop-bottom" popover data-placement="bottom">
+    <p class="pop__title">Bottom popover</p>
+    <p class="pop__body">Native <code>popover</code> attribute. Click outside or press Esc to close.</p>
+  </div>
+  <div class="pop" id="pop-right" popover data-placement="right">
+    <p class="pop__title">Right popover</p>
+    <p class="pop__body">Native <code>popover</code> attribute. Click outside or press Esc to close.</p>
+  </div>
+
+  <a class="dx-credit" href="https://dexitheus.ai" target="_blank" rel="noopener">dexitheus.ai</a>
+  <script src="script.js"></script>
+</body>
+</html>
